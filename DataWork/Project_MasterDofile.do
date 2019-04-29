@@ -86,11 +86,11 @@
   if inlist(c(username), "wb527175", "julie") == 1 {
    
 		global github 	"C:/Users/julie/OneDrive/Documents/GitHub/Jordan-MSSRP-IE-Perso-2"
-		global dropbox	"C:\Users\julie\Dropbox\Jordan MSSRP_Perso"
+		global dropbox	"C:/Users/julie/Dropbox/Jordan MSSRP_Perso"
    }
 	
 * These lines are used to test that the name is not already used (do not edit manually)
-*round*Baseline*bl*Randomization*rand*******************************************
+*round*Baseline*bl*Randomization*rand*Midline*mdl*Endline*edl*******************
 *untObs*************************************************************************
 *subFld*************************************************************************
 *iefolder will not work properly if the lines above are edited
@@ -99,8 +99,8 @@
    * Project folder globals
    * ---------------------
 
-   global dataWorkFolder         	"$dropbox/09. DataWork"
-   global doWorkFolder         		"$github/09. DataWork"
+   global dataWorkFolder         	"$dropbox/DataWork"
+   global doWorkFolder         		"$github/DataWork"
 
 *iefolder*1*FolderGlobals*subfolder*********************************************
 *iefolder will not work properly if the line above is edited
@@ -109,19 +109,19 @@
 *iefolder*1*FolderGlobals*master************************************************
 *iefolder will not work properly if the line above is edited
 
-   global mastData               "$dataWorkFolder/01. MasterData" 
+   global mastData               "$dataWorkFolder/MasterData" 
 
 *iefolder*1*FolderGlobals*encrypted*********************************************
 *iefolder will not work properly if the line above is edited
 
-   global encryptFolder          "$dataWorkFolder/02. EncryptedData" 
+   global encryptFolder          "$dataWorkFolder/EncryptedData" 
 
 
 *iefolder*1*RoundGlobals*rounds*Baseline*bl*************************************
 *iefolder will not work properly if the line above is edited
 
    *Baseline folder globals
-   global bl                     "$dataWorkFolder/04. Baseline" 
+   global bl                     "$dataWorkFolder/Baseline" 
    global bl_encrypt             "$encryptFolder/02. Round Baseline Encrypted" 
    global bl_dt                  "$bl/03. DataSets" 
    global bl_do                  "$doWorkFolder/01. Dofiles" 
@@ -132,11 +132,27 @@
 *iefolder will not work properly if the line above is edited
 
    *Randomization folder globals
-   global rand                   "$dataWorkFolder/03. Randomization" 
+   global rand                   "$dataWorkFolder/Randomization" 
    global rand_encrypt           "$encryptFolder/01. Round Randomization Encrypted" 
    global rand_dt                "$rand/03. DataSets" 
    global rand_do                "$doWorkFolder/01. Dofiles" 
    global rand_out               "$rand/04. Output" 
+
+
+*iefolder*1*RoundGlobals*rounds*Midline*mdl*************************************
+*iefolder will not work properly if the line above is edited
+
+   *Midline folder globals
+   global mdl                    "$dataWorkFolder/Midline" 
+   global mdl_encrypt            "$encryptFolder/01. Round Midline Encrypted" 
+   global mdl_dt                 "$mdl/03. DataSets" 
+   global mdl_do                 "$doWorkFolder/01. Dofiles" 
+   global mdl_out                "$mdl/04. Output" 
+
+
+*iefolder*1*RoundGlobals*rounds*Endline*edl*************************************
+*iefolder will not work properly if the line above is edited
+
 
 *iefolder*1*FolderGlobals*endRounds*********************************************
 *iefolder will not work properly if the line above is edited
@@ -186,6 +202,22 @@
 *iefolder*3*RunDofiles*Randomization*rand***************************************
 *iefolder will not work properly if the line above is edited
 
+
+
+*iefolder*3*RunDofiles*Midline*mdl**********************************************
+*iefolder will not work properly if the line above is edited
+
+   if (0) { //Change the 0 to 1 to run the Midline master dofile
+       do "$mdl/Midline_MasterDofile.do" 
+   }
+
+
+*iefolder*3*RunDofiles*Endline*edl**********************************************
+*iefolder will not work properly if the line above is edited
+
+   if (0) { //Change the 0 to 1 to run the Endline master dofile
+       do "$edl/Endline_MasterDofile.do" 
+   }
 
 *iefolder*3*End_RunDofiles******************************************************
 *iefolder will not work properly if the line above is edited
