@@ -99,7 +99,8 @@
    * Project folder globals
    * ---------------------
 
-   global dataWorkFolder         "$dropbox/09. DataWork"
+   global dataWorkFolder         	"$dropbox/09. DataWork"
+   global doWorkFolder         		"$github/09. DataWork"
 
 *iefolder*1*FolderGlobals*subfolder*********************************************
 *iefolder will not work properly if the line above is edited
@@ -108,34 +109,34 @@
 *iefolder*1*FolderGlobals*master************************************************
 *iefolder will not work properly if the line above is edited
 
-   global mastData               "$dataWorkFolder/MasterData" 
+   global mastData               "$dataWorkFolder/01. MasterData" 
 
 *iefolder*1*FolderGlobals*encrypted*********************************************
 *iefolder will not work properly if the line above is edited
 
-   global encryptFolder          "$dataWorkFolder/EncryptedData" 
+   global encryptFolder          "$dataWorkFolder/02. EncryptedData" 
 
 
 *iefolder*1*RoundGlobals*rounds*Baseline*bl*************************************
 *iefolder will not work properly if the line above is edited
 
    *Baseline folder globals
-   global bl                     "$dataWorkFolder/Baseline" 
-   global bl_encrypt             "$encryptFolder/Round Baseline Encrypted" 
-   global bl_dt                  "$bl/DataSets" 
-   global bl_do                  "${github}/Dofiles" 
-   global bl_out                 "$bl/Output" 
+   global bl                     "$dataWorkFolder/04. Baseline" 
+   global bl_encrypt             "$encryptFolder/02. Round Baseline Encrypted" 
+   global bl_dt                  "$bl/03. DataSets" 
+   global bl_do                  "$doWorkFolder/01. Dofiles" 
+   global bl_out                 "$bl/04. Output" 
 
 
 *iefolder*1*RoundGlobals*rounds*Randomization*rand******************************
 *iefolder will not work properly if the line above is edited
 
    *Randomization folder globals
-   global rand                   "$dataWorkFolder/Randomization" 
-   global rand_encrypt           "$encryptFolder/Round Randomization Encrypted" 
-   global rand_dt                "$rand/DataSets" 
-   global rand_do                "${github}/Dofiles" 
-   global rand_out               "$rand/Output" 
+   global rand                   "$dataWorkFolder/03. Randomization" 
+   global rand_encrypt           "$encryptFolder/01. Round Randomization Encrypted" 
+   global rand_dt                "$rand/03. DataSets" 
+   global rand_do                "$doWorkFolder/01. Dofiles" 
+   global rand_out               "$rand/04. Output" 
 
 *iefolder*1*FolderGlobals*endRounds*********************************************
 *iefolder will not work properly if the line above is edited
@@ -153,7 +154,7 @@
    * standardization, different sets of control variables,
    * adofile paths etc.
 
-   do "${github}/global_setup.do" 
+   do "$doWorkFolder/global_setup.do" 
 
 
 *iefolder*2*End_StandardGlobals*************************************************
@@ -181,17 +182,10 @@
 *iefolder*3*RunDofiles*Baseline*bl**********************************************
 *iefolder will not work properly if the line above is edited
 
-   if (0) { //Change the 0 to 1 to run the Baseline master dofile
-       do "${github}/Baseline_MasterDofile.do" 
-   }
-
 
 *iefolder*3*RunDofiles*Randomization*rand***************************************
 *iefolder will not work properly if the line above is edited
 
-   if (0) { //Change the 0 to 1 to run the Randomization master dofile
-       do "${github}/Randomization_MasterDofile.do" 
-   }
 
 *iefolder*3*End_RunDofiles******************************************************
 *iefolder will not work properly if the line above is edited
