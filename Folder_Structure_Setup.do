@@ -14,8 +14,7 @@
 		cap iefolder new round Baseline, projectfolder(${`folder'}) abbrev(bl)
 
 		* Create Midline folder
-		iefolder new round Midline, projectfolder(${`folder'}) abbrev(mdl)
-		
+		cap iefolder new round Midline, projectfolder(${`folder'}) abbrev(mdl)		
 	}
 	
 	* Create placeholders on github project strucutre
